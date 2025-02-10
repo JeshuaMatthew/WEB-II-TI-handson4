@@ -5,7 +5,9 @@ const LifeCycle = () => {
     const [count, setCount] = useState(0);
     useEffect(() => {
         console.log("Effect triggered");
-
+        return () =>{
+            console.log("Clean Up before effect runs again or component unmounts")
+        }
     }, [count])
     return (
         <div>
